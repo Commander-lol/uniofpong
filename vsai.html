@@ -51,4 +51,19 @@
 <script src="controller/cpu_player.js"></script>
 <script>
     window.uoplccpu("lbat");
+
+    document.addEventListener("collision", function(e){
+        var trash = [
+            "Child's Play",
+            "<tspan x=\"800\" dy=\"-0.6em\">You'll have to do</tspan><tspan x=\"800\" dy=\"0.8em\">better than that</tspan>",
+            "Welcome to the slam",
+            "Whoop there it is",
+            "<tspan x=\"800\" dy=\"-0.6em\">Is that the best</tspan><tspan x=\"800\" dy=\"0.8em\">you've got?</tspan>",
+            "<tspan x=\"800\" dy=\"-0.6em\">I thought you were good at</tspan><tspan x=\"800\" dy=\"0.8em\">playing with little balls</tspan>"
+        ];
+
+        if(e.detail.bat == "ting"){
+            document.getElementById("debug").innerHTML = trash[Math.floor(Math.random() * trash.length)];
+        }
+    });
 </script>
